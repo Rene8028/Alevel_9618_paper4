@@ -1,2 +1,8 @@
 .DS_Store
 /tmp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
