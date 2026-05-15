@@ -33,11 +33,24 @@ def AddNode(NewNum):
                 TreeArray[prenode][2] = FreeNode
             FreeNode = FreeNode + 1
 
+def WriteAllToFile():
+    global TreeArray, RootPointer, FreeNode
+    try:
+        WFile = open("Tree.txt", 'a')
+        for i in range(50):
+            line = str(TreeArray[i][0]) + "," + str(TreeArray[i][1]) + "," +str(TreeArray[i][2]) + "\n"
+            WFile.write(line)
+        WFile.close()
+    except:
+        print("ERROR: Cant write the file!")
+            
+            
 thefile = open("TreeData.txt")
 thedata = thefile.read().split()
 for num in thedata:
     AddNode(int(num))
-
-print(TreeArray)
-
 thefile.close()
+
+WriteAllToFile()
+
+
